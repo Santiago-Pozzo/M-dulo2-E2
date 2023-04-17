@@ -48,7 +48,7 @@ const pizzas = [
   },
 ];
 
-//Funciones 
+//Funciones de uso general
 function imprimirSeparador() {
   console.log("=======================================================");
 }
@@ -59,12 +59,14 @@ function imprimirEspacio() {
 }
 
 function imprimirPizzaId(pizza) {
-  console.log(`La variedad número ${pizza.id} es una ${pizza.nombre}`);
+  console.log(`La variedad número ${pizza.id} es una ${pizza.nombre}.`);
 }
 
 function imprimirPizzaPrecio(pizza) {
   console.log(`-La ${pizza.nombre} cuesta $${pizza.precio}.`);
 }
+
+
 
 
 //Consignas:
@@ -106,5 +108,15 @@ imprimirSeparador();
 imprimirEspacio();
 
 //d)Imprimir ingredientes de cada pizza
+function imprimirIngredientes(pizza) {
+  imprimirPizzaId(pizza);
+  console.log(`Sus ingredientes son:`);
+  pizza.ingredientes.forEach((ingrediente) => console.log(ingrediente))
+  console.log(" ");
+}
 
+imprimirSeparador();
 
+pizzas.forEach((pizza) => imprimirIngredientes(pizza));
+
+imprimirSeparador();
